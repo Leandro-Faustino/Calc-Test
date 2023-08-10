@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/08/10 18:16:47.986,=C:\Users\Leand\OneDrive\Documentos\Embarcadero\Studio\Projects\Calc-Teste\Test\TestCalcTest.pas</Transaction>
-    <Transaction>2023/08/10 18:16:48.222,=C:\Users\Leand\OneDrive\Documentos\Embarcadero\Studio\Projects\Calc-Teste\CalcTest.formPrincipal.pas</Transaction>
+	<Transactions>
+    <Transaction>2023/08/10 18:16:47.000.986,=C:\Users\Leand\OneDrive\Documentos\Embarcadero\Studio\Projects\Calc-Teste\Test\TestCalcTest.pas</Transaction>
+    <Transaction>2023/08/10 18:16:48.000.222,=C:\Users\Leand\OneDrive\Documentos\Embarcadero\Studio\Projects\Calc-Teste\CalcTest.formPrincipal.pas</Transaction>
   </Transactions>
 </BorlandProject>
