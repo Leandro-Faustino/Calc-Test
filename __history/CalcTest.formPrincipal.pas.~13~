@@ -1,0 +1,86 @@
+unit CalcTest.formPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfmrPrincipal = class(TForm)
+    PnPrincipal: TPanel;
+    LbNumero1: TLabel;
+    lbNnumero2: TLabel;
+    ednumero1: TEdit;
+    ednumero2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label1: TLabel;
+    edReult: TEdit;
+    Btnlimpar: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    function Somar(const pNumero1 ,pNumero2 : Integer) : Integer;
+    function Subtrair(const pNumero1, pNumero2 : Integer) : Integer;
+    function Multiplicar(const pNumero1, pNumero2 : Integer) : Integer;
+    function Dividir(const pNumero1, pNumero2 : Integer) : Integer;
+
+  end;
+
+var
+  fmrPrincipal: TfmrPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+{ TfmrPrincipal }
+
+procedure TfmrPrincipal.Button1Click(Sender: TObject);
+begin
+  edReult.text := Self.Somar(StrToInt(ednumero1.text),StrToInt(ednumero2.text)).ToString;
+end;
+
+procedure TfmrPrincipal.Button2Click(Sender: TObject);
+begin
+   edReult.text := Self.Subtrair(StrToInt(ednumero1.text),StrToInt(ednumero2.text)).ToString;
+end;
+
+procedure TfmrPrincipal.Button3Click(Sender: TObject);
+begin
+   edReult.text := Self.Dividir(StrToInt(ednumero1.text),StrToInt(ednumero2.text)).ToString;
+end;
+
+procedure TfmrPrincipal.Button4Click(Sender: TObject);
+begin
+  edReult.text := Self.Multiplicar(StrToInt(ednumero1.text),StrToInt(ednumero2.text)).ToString;
+end;
+
+function TfmrPrincipal.Dividir(const pNumero1, pNumero2: Integer): Integer;
+begin
+  Result := pNumero1 div pNumero2;
+end;
+
+function TfmrPrincipal.Multiplicar(const pNumero1, pNumero2: Integer): Integer;
+begin
+  Result := pNumero1 * pNumero2;
+end;
+
+function TfmrPrincipal.Somar(const pNumero1, pNumero2: Integer): Integer;
+begin
+  Result := pNumero1 + pNumero2;
+end;
+
+function TfmrPrincipal.Subtrair(const pNumero1, pNumero2: Integer): Integer;
+begin
+  Result := pNumero1 - pNumero2;
+end;
+
+end.

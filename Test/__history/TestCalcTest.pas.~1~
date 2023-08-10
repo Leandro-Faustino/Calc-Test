@@ -1,0 +1,90 @@
+unit TestCalcTest;
+
+interface
+
+uses
+  TestFramework, Vcl.Dialogs, Winapi.Windows, Vcl.StdCtrls, Vcl.Forms, Vcl.Graphics,
+  System.Variants, Winapi.Messages, CalcTest.formPrincipal, System.SysUtils,
+  Vcl.Controls, Vcl.ExtCtrls, System.Classes;
+
+type
+  TestTfmrPrincipal = class(TTestCase)
+  strict private
+    FfmrPrincipal: TfmrPrincipal;
+  public
+    procedure SetUp; override;
+    procedure TearDown; override;
+  published
+    procedure TestSomar;
+    procedure TestSubtrair;
+    procedure TestMultiplicar;
+    procedure TestDividir;
+  end;
+
+implementation
+
+procedure TestTfmrPrincipal.SetUp;
+begin
+  FfmrPrincipal := TfmrPrincipal.Create(nil);
+end;
+
+procedure TestTfmrPrincipal.TearDown;
+begin
+  FfmrPrincipal.Free;
+  FfmrPrincipal := nil;
+end;
+
+procedure TestTfmrPrincipal.TestSomar;
+var
+  ReturnValue: Integer;
+  pNumero2: Integer;
+  pNumero1: Integer;
+begin
+  pNumero1 := 2;
+  pNumero2 := 2;
+  ReturnValue := FfmrPrincipal.Somar(pNumero1, pNumero2);
+
+  CheckEquals(4, ReturnValue, 'Ocorreu erro ao Somar : FfmrPrincipal.Somar!')
+end;
+
+procedure TestTfmrPrincipal.TestSubtrair;
+var
+  ReturnValue: Integer;
+  pNumero2: Integer;
+  pNumero1: Integer;
+begin
+  pNumero1 := 10;
+  pNumero2 := 8;
+  ReturnValue := FfmrPrincipal.Subtrair(pNumero1, pNumero2);
+  CheckEquals(2, ReturnValue, 'Ocorreu erro ao Subtrair : FfmrPrincipal.Subtrair!')
+end;
+
+procedure TestTfmrPrincipal.TestMultiplicar;
+var
+  ReturnValue: Integer;
+  pNumero1: Integer;
+  pNumero2: Integer;
+begin
+  pNumero1 := 10;
+  pNumero2 := 10;
+  ReturnValue := FfmrPrincipal.Multiplicar(pNumero1, pNumero2);
+  CheckEquals(100, ReturnValue, 'Ocorreu erro ao Multiplicar : FfmrPrincipal.Multiplicar!');
+end;
+
+procedure TestTfmrPrincipal.TestDividir;
+var
+  ReturnValue: Double;
+  pNumero2: Double;
+  pNumero1: Double;
+begin
+  pNumero1 := 10;
+  pNumero2 := 2;
+  ReturnValue := FfmrPrincipal.Dividir(pNumero1, pNumero2);
+  CheckEquals(5, ReturnValue, 'Ocorreu erro ao Dividir : FfmrPrincipal.Dividir!')
+end;
+
+initialization
+  // Register any test cases with the test runner
+  RegisterTest(TestTfmrPrincipal.Suite);
+end.
+
