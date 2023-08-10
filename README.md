@@ -3,5 +3,5 @@ Este projeto foi criado para aprendizado de teste unitários com a ferramenta DU
 
 ## Resultado do teste
 <p align="center">
-  <img width=800" src="Calc-Teste\assets\imagemTeste.png">
+  <img width=800" src="assets/imagemTeste.png.png">
 </p>
